@@ -10,7 +10,7 @@ class Solution(object):
         #area_list = [0] * size
         area_list = 0
         #pos = size - 1
-        while left <  right and pos >= 0:
+        while left <  right:
             if height[left] >= height[right]:
                 length = height[right]
                 breadth = right - left
