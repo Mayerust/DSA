@@ -27,3 +27,5 @@ class Solution(object):
                         right = right + 1
                         counter = 1
 
+
+
