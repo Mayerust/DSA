@@ -4,28 +4,39 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums.sort()
-        left = 0
-        right = 1
-        counter = 1
-        if len(nums) == 1:
-            return nums[0]
+        #nums.sort()
+        #left = 0
+        #right = 1
+        #counter = 1
+        #if len(nums) == 1:
+            #return nums[0]
 
-        else:
-            while right < len(nums) and left < len(nums):
-                if nums[right] == nums[left]:
-                    counter += 1
-                    if counter > len(nums) / 2:
-                        return nums[left]
-                    else:
-                        right = right + 1
-                elif nums[right] != nums[left]:
-                    if counter > len(nums) / 2:
-                       return nums[left]
-                    else:
-                        left = right
-                        right = right + 1
-                        counter = 1
-
-
+        #else:
+            #while right < len(nums) and left < len(nums):
+                #if nums[right] == nums[left]:
+                    #counter += 1
+                    #if counter > len(nums) / 2:
+                        #return nums[left]
+                    #else:
+                        #right = right + 1
+                #elif nums[right] != nums[left]:
+                    #if counter > len(nums) / 2:
+                       #return nums[left]
+                    #else:
+                        #left = right
+                        #right = right + 1
+                        #counter = 1
+        freq = {}
+        i = 0
+        while i < len(nums):
+            if nums[i] in freq:
+                freq[nums[i]] += 1
+                i += 1
+            else:
+                freq[nums[i]] = 1
+                i += 1
+        for key, values in freq.items():
+            if values > len(nums) / 2:
+                return (key)           
+ 
 
