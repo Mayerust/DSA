@@ -4,7 +4,7 @@ class Solution:
         i = 0
         j = len(nums) - 1
         k = len(nums) - 1
-        while 0 <= j < len(nums) and 0 <= k < len(nums):
+        while 0 <= j < len(nums) and 0 <= k < len(nums) and i <= j:
             if abs(nums[i]) > abs(nums[j]):
                 result[k] = nums[i] * nums[i]
                 k -= 1
