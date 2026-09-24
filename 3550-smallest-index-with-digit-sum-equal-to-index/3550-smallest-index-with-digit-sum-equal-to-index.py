@@ -1,5 +1,6 @@
 class Solution:
     def smallestIndex(self, nums: List[int]) -> int:
+        """
         i = 0
         while i < len(nums):
             if nums[i] == 1000:
@@ -27,3 +28,8 @@ class Solution:
                     return i
                 i += 1
         return -1            
+        """
+        for i, num in enumerate(nums):
+            if i == sum(int(d) for d in str(num)):
+                return i
+        return -1    
